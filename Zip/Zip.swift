@@ -185,7 +185,7 @@ public class Zip {
             while filePointer != nil {
                 let readBytes = unzReadCurrentFile(zip, &buffer, bufferSize)
                 if readBytes > 0 {
-                    fwrite(buffer, Int(readBytes), 1, filePointer)
+                    fwrite(buffer, Int(readBytes-1), 1, filePointer)
                 }
                 else {
                     break
